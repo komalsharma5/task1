@@ -1,0 +1,58 @@
+﻿MERN Stack Intern Assignment: Authentication & Profile Management using MUI
+Objective: Your task is to build a simple authentication system using the MERN (MongoDB, Express, React, Node.js) stack. The application should allow users to sign up, log in, view their profile, update additional details, and log out. The front-end should be built using Material UI (MUI) for UI components.
+________________
+
+
+Project Requirements:
+1. User Authentication System
+* Implement Sign Up and Sign In pages using Material UI components.
+* Use JWT-based authentication to manage user sessions.
+* Store user credentials securely in MongoDB (ensure passwords are hashed using bcrypt).
+2. Profile Management
+* After successful login, redirect users to the Profile Page.
+* Display user details such as name, email, and profile picture.
+* Allow users to upload a profile picture and update additional details (e.g., bio, phone number).
+* Save profile data in the database and update it dynamically on the front end.
+3. Logout Functionality
+* Implement a Logout button that clears the authentication token and redirects users to the Sign In page.
+________________
+
+
+Technical Guidelines:
+Back-End (Node.js & Express)
+* Use MongoDB as the database (Mongoose for schema modeling).
+* Create API endpoints for:
+   * User registration (POST /api/auth/signup)
+   * User login (POST /api/auth/login)
+   * Fetch user profile (GET /api/users/profile)
+   * Update profile details (PUT /api/users/profile)
+   * Logout (handled by front-end by clearing the token)
+* Use JWT for authentication and store the token securely (e.g., HTTP-only cookies or local storage with precautions).
+Front-End (React & MUI)
+* Use React with Material UI to create a visually appealing UI.
+* Implement React Router for navigation between pages (Sign Up, Sign In, Profile).
+* Use Context API or Redux for managing authentication state.
+* Use Axios to communicate with the backend API.
+* Ensure form validation (e.g., using Yup and Formik for handling form submissions).
+Additional Notes:
+* The project should have a well-structured folder setup (client/ for front-end and server/ for back-end).
+* Ensure responsiveness for mobile and desktop screens.
+* Follow proper code documentation and comments to explain functionality.
+________________
+
+
+Bonus (Optional but Recommended):
+* Implement Google/Facebook OAuth authentication.
+* Add a dark mode toggle using MUI’s theme settings.
+* Deploy the project on Vercel (Frontend) and Render/Heroku (Backend).
+________________
+
+
+Submission Guidelines:
+* Push the code to a GitHub repository and share the link.
+* Include a README.md file explaining the setup process and features.
+* Submit a demo video showcasing the app’s functionality.
+________________
+
+
+This assignment will test your ability to work with the full MERN stack, handle authentication, and build a clean UI with Material UI. Good luck! 🚀
