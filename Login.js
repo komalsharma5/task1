@@ -5,26 +5,18 @@ import { loginUser } from '../Redux/Slice/authSlice';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-
-
-
-
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({ email: '', password: '' });
   const navigate = useNavigate()
+  
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    dispatch(loginUser({ email: formData.email , password : formData.password})).then((result)=>{
-      if(result.payload){
-        alert("Login successful!");
-        navigate("/profile");
-      }
-    }); 
+    dispatch(loginUser({ email: formData.email , password : formData.password}))
+    navigate("/profile")
   };
 // console.log("----->formData",formData);
 
@@ -34,21 +26,21 @@ const Login = () => {
           <h2 className="text-center mb-4">Login</h2>
           <form onSubmit={handleSubmit}>
               <div className="mb-3">
-                  <input type="email" name="email" placeholder="Email"  value={formData.email} onChange={handleChange} required  className="form-control" />
+                  <input type="email" name="email" placeholder="Email" onChange={handleChange} value={formData.email} required  className="form-control" />
                   </div>
                   <div className="mb-3">
                   <input type="password" name="password" placeholder="Password" onChange={handleChange}  value={formData.password} required  className="form-control" />
                   </div>
                   <div className="mb-3">
                   {/* <button type="submit" className="btn btn-primary w-100">Login</button> */}
-                  <button type="submit" className="btn btn-primary w-100">
+                  <button type="submit" className="btn btn-primary w-100" onClick={handleSubmit}>
                        login
                     </button>
                  
                   </div>
          </form>
           <p className="text-center mt-3">
-                  Don't have an account? <a href="/">Signup</a>
+                Don't have an account? <a href="/">Signup</a>
           </p>
     </div>
     </div>
@@ -122,7 +114,7 @@ export default Login;
 //         <div className="d-flex justify-content-center align-items-center vh-100">
 //             <div className="border p-4 rounded shadow-lg w-25">
 //                 <h2 className="text-center mb-4">Login</h2>
-//                 <form onSubmit={handleSubmit}>
+//                <form onSubmit={handleSubmit}>
 //                     <div className="mb-3">
 //                         <input type="email" name="email"  className="form-control" placeholder="Email" onChange={handleChange} required />
 //                     </div>
